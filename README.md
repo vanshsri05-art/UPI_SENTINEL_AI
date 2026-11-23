@@ -96,18 +96,26 @@ python run.py start
 Or run them separately in two terminals: `python run.py api` and `python run.py dashboard`
 (equivalent to `uvicorn backend.main:app --port 8000` and `streamlit run frontend/dashboard.py`).
 
+### Local Development URLs
+
 | What | URL |
 |---|---|
 | Dashboard | http://localhost:8501 |
-| API docs (Swagger UI) | http://127.0.0.1:8000/docs  (ReDoc: `/redoc`) |
-| Health check | http://127.0.0.1:8000/health |
+| API Docs (Swagger UI) | http://127.0.0.1:8000/docs |
+| API Docs (ReDoc) | http://127.0.0.1:8000/redoc |
+| Health Check | http://127.0.0.1:8000/health |
 
-**Demo credentials** (from `.env`, created from `.env.example` — change them for any deployment):
+### Demo Login Credentials
 
-| Role | Username | Password |
-|---|---|---|
-| Admin | `admin` | `Admin@12345` |
-| Regular user | `analyst` | `Analyst@12345` |
+**Admin Account**
+- Username: Configure locally
+- Password: Configure locally
+
+**Analyst Account**
+- Username: Configure locally
+- Password: Configure locally
+
+For local demonstration, configure your own credentials using the environment variables described in `.env.example`.
 
 The 1,500 seeded demo transactions belong to `analyst` (admin sees everything; regular users see only their own).
 Seeded rows are the model's real predictions on the held-out test split, but **their timestamps are simulated** over the last 30 days; they are tagged `source = 'seed'`.
